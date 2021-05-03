@@ -9,9 +9,5 @@ First to reach blah blah blah
 
 
 
-Edit:
-
-Added media queries for responsive page
-
 
 ![Screenshot (68)](https://user-images.githubusercontent.com/81745636/116611055-8ee9d180-a953-11eb-89a2-26d2c33f2360.png)
