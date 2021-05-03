@@ -1,22 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
+  text-transform: uppercase;
 }
 
 html {
-  font-size: 62.5%;
-  box-sizing: border-box;
+  font-size: 19px;
 }
 
 body {
-  font-family: "Nunito", sans-serif;
-  font-weight: 400;
+  font-family: sans-serif;
   height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  color: rgb(34, 34, 34);
+  background-image: linear-gradient(to bottom right, #352c36, #bf2e34);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,42 +22,40 @@ body {
 /* LAYOUT */
 main {
   position: relative;
-  width: 100rem;
-  height: 60rem;
+  width: 90%;
+  height: 90%;
   background-color: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(200px);
-  filter: blur();
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
+  box-shadow: 0 3em 5em rgba(0, 0, 0, 0.25);
+  border-radius: 0.5em;
   overflow: hidden;
   display: flex;
 }
 
 .player {
   flex: 50%;
-  padding: 9rem;
+  padding: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: all 0.75s;
+  transition: all 0.5s ease;
+  max-width: 50%;
 }
 
 /* ELEMENTS */
 .name {
   position: relative;
-  font-size: 4rem;
-  text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
-  font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
+  font-weight: normal;
+  white-space: nowrap;
+  margin-top: 2em;
 }
 
 .score {
-  font-size: 8rem;
-  font-weight: 300;
   color: #c7365f;
   margin-bottom: auto;
+  font-size: 1.5em;
 }
 
 .player--active {
@@ -68,9 +63,6 @@ main {
 }
 .player--active .name {
   font-weight: 700;
-}
-.player--active .score {
-  font-weight: 400;
 }
 
 .player--active .current {
@@ -82,21 +74,14 @@ main {
   opacity: 0.8;
   border-radius: 9px;
   color: #fff;
-  width: 65%;
-  padding: 2rem;
+  padding: 2em;
   text-align: center;
-  transition: all 0.75s;
+  margin-bottom: 2em;
 }
 
 .current-label {
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-size: 1.7rem;
+  margin-bottom: 1em;
   color: #ddd;
-}
-
-.current-score {
-  font-size: 3.5rem;
 }
 
 /* ABSOLUTE POSITIONED ELEMENTS */
@@ -107,41 +92,29 @@ main {
   color: #444;
   background: none;
   border: none;
-  font-family: inherit;
-  font-size: 1.8rem;
-  text-transform: uppercase;
   cursor: pointer;
-  font-weight: 400;
-  transition: all 0.2s;
-
+  transition: all 0.2s ease;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
-
-  padding: 0.7rem 2.5rem;
-  border-radius: 50rem;
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-}
-
-.btn::first-letter {
-  font-size: 2.4rem;
-  display: inline-block;
-  margin-right: 0.7rem;
+  padding: 0.7em 2.5em;
+  border-radius: 50em;
+  box-shadow: 0 1.75em 3.5em rgba(0, 0, 0, 0.1);
 }
 
 .btn--new {
-  top: 4rem;
+  top: 5%;
 }
 .btn--roll {
-  top: 39.3rem;
+  bottom: 25%;
 }
 .btn--hold {
-  top: 46.1rem;
+  bottom: 15%;
 }
 
 .btn:active {
   transform: translate(-50%, 3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.15);
 }
 
 .btn:focus {
@@ -151,10 +124,11 @@ main {
 .dice {
   position: absolute;
   left: 50%;
-  top: 16.5rem;
-  transform: translateX(-50%);
-  height: 10rem;
-  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 5em;
+  box-shadow: 0 2em 5em rgba(0, 0, 0, 0.2);
+  border-radius: 10%;
 }
 
 .player--winner {
@@ -168,4 +142,40 @@ main {
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 17px;
+  }
+  .player {
+    width: 50%;
+  }
+  main {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .btn {
+    padding: 0.7em 1.5em;
+  }
+  .current {
+    padding: 1.5em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 15px;
+  }
+  main {
+    width: 100%;
+  }
+  .btn {
+    padding: 0.7em 1em;
+  }
+  .current {
+    padding: 1em;
+  }
 }
